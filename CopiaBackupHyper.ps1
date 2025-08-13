@@ -1,6 +1,7 @@
 ﻿# Caminhos
 $OrigemBase = "C:\BackupVMs"
 $DestinoBase = "C:\Users\lab\OneDrive\BackupLab\BackupHyperv"
+#Utilizei o Onedriver mapeado no servidor
 
 # Lista para armazenar os resultados
 $resultados = @()
@@ -35,7 +36,7 @@ foreach ($VMFolder in $VMFolders) {
     }
 }
 
-# 🔥 Apagar backups locais com mais de 2 dias
+#  Apagar backups locais com mais de 2 dias
 $LimiteDias = (Get-Date).AddDays(-2)
 $PastasAntigas = Get-ChildItem -Path $OrigemBase -Recurse -Directory | Where-Object { $_.CreationTime -lt $LimiteDias }
 
@@ -51,7 +52,7 @@ foreach ($pasta in $PastasAntigas) {
 
 # Monta a mensagem com data atual
 $DataAtual = Get-Date -Format 'dd/MM/yyyy HH:mm'
-$Mensagem = "Resultado da Cópia e Limpeza dos Backups em ${DataAtual}:`r`n" + ($resultados -join "`r`n")
+$Mensagem = "Resultado da Copia e Limpeza dos Backups em ${DataAtual}:`r`n" + ($resultados -join "`r`n")
 
 # Remove caracteres não ASCII (opcional)
 $Mensagem = -join ($Mensagem.ToCharArray() | Where-Object { [int]$_ -lt 128 })

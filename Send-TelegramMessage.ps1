@@ -1,7 +1,7 @@
 ﻿param (
     [string]$Mensagem,
-    [string]$Token = "8376418691:AAFhuEmFfvilB5Z7zgbzYwBfmtzgvfrPaU8",
-    [string]$ChatId = "1784353403"
+    [string]$Token = "TOKEN",
+    [string]$ChatId = "chat id"
 )
 
 function Send-TelegramMessage {
