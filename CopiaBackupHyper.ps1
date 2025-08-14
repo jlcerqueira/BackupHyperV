@@ -58,4 +58,4 @@ $Mensagem = "Resultado da Copia e Limpeza dos Backups em ${DataAtual}:`r`n" + ($
 $Mensagem = -join ($Mensagem.ToCharArray() | Where-Object { [int]$_ -lt 128 })
 
 # Envia mensagem para o Telegram
-& "C:\Program Files\Lab\Tasks\Send-TelegramMessage.ps1" -Mensagem $Mensagem
+& "C:\Program Files\Lab\Tasks\Send-TelegramMessage1.ps1" -Mensagem $Mensagem
