@@ -39,6 +39,8 @@ Projetado para uso em ambientes de laboratório e testes.
 4. Importe a tarefa agendada no Windows:  
 ```powershell 
    schtasks /create /xml "BackupHypervTaskscheduler.xml" /tn "Backup Hyper-V"
+   schtasks /create /xml "CopiaBackupHyperV.xml" /tn "Copia Backup Hyper-V"
+
 ```
 ▶️ USO
 
